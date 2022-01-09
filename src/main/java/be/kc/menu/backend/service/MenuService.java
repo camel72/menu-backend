@@ -19,7 +19,7 @@ public class MenuService {
     private MenuMapper menuMapper;
     private MenuRepository menuRepository;
 
-    public List<MenuDto> getMenus() {
+    public List<MenuDto> retrieveMenus() {
         return menuRepository.findAll().stream()
                 .map(menu -> menuMapper.map(menu))
                 .collect(Collectors.toList());

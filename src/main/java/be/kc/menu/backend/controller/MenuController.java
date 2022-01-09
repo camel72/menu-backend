@@ -18,12 +18,12 @@ public class MenuController {
 
     private final MenuService menuService;
 
-    @GetMapping("/getMenus")
-    private List<MenuDto> getMenus() {
-        return menuService.getMenus();
+    @GetMapping("/retrieve")
+    private List<MenuDto> retrieveMenus() {
+        return menuService.retrieveMenus();
     }
 
-    @PostMapping("/saveMenu")
+    @PostMapping("/save")
     private void saveMenu(@RequestBody MenuDto menuDto) {
         menuService.saveMenu(menuDto);
     }

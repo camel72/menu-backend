@@ -39,7 +39,7 @@ public class MenuControllerTest {
                 .name("testName")
                 .build();
 
-        ResponseEntity response = restTemplate.postForEntity(SERVER_URL + port + CONTEXT_URL + "/saveMenu", menuDto, Void.class);
+        ResponseEntity response = restTemplate.postForEntity(SERVER_URL + port + CONTEXT_URL + "/save", menuDto, Void.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 }

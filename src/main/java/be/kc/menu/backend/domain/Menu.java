@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,12 +31,12 @@ public class Menu {
     @Column(name = "NAME")
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Category category;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Ingredient> ingredientsList;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Instruction> instructionsList;
 }
